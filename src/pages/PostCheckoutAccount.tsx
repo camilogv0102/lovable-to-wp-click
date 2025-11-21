@@ -215,7 +215,7 @@ const PostCheckoutAccount = ({ pageData: rawPageData }: Props) => {
         // Redirigir a Discord después de 2 segundos
         console.log("[PostCheckout] Programando redirección a Discord");
         setTimeout(() => {
-          window.location.href = "https://discord.gg/USaqPXtW";
+          window.location.href = "https://discord.com/invite/sXMaHca4j";
         }, 2000);
       } else {
         // Error desde WordPress

@@ -226,9 +226,12 @@ const GetHelp = () => {
               <Button 
                 size="lg" 
                 className="bg-white text-foreground hover:bg-white/90"
+                asChild
               >
-                <MessageCircle className="w-5 h-5" />
-                Únete a Discord
+                <a href="https://discord.com/invite/sXMaHca4j" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="w-5 h-5" />
+                  Únete a Discord
+                </a>
               </Button>
               <Button 
                 size="lg" 
