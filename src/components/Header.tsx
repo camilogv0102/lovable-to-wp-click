@@ -22,18 +22,18 @@ const Header = () => {
         </Link>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-2">
           <NavigationMenu>
-            <NavigationMenuList>
+            <NavigationMenuList className="gap-2">
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-foreground hover:text-primary">
+                <NavigationMenuTrigger className="text-foreground hover:text-secondary transition-colors">
                   Solutions
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="w-[600px] p-6 bg-popover">
                     <div className="grid gap-4">
                       <div className="group rounded-lg p-4 hover:bg-accent/50 transition-colors cursor-pointer">
-                        <h3 className="font-semibold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
+                        <h3 className="font-semibold text-lg mb-2 text-foreground group-hover:text-secondary transition-colors">
                           Landing Pages
                         </h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -42,7 +42,7 @@ const Header = () => {
                       </div>
                       
                       <div className="group rounded-lg p-4 hover:bg-accent/50 transition-colors cursor-pointer">
-                        <h3 className="font-semibold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
+                        <h3 className="font-semibold text-lg mb-2 text-foreground group-hover:text-secondary transition-colors">
                           Corporate Websites
                         </h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -51,7 +51,7 @@ const Header = () => {
                       </div>
                       
                       <div className="group rounded-lg p-4 hover:bg-accent/50 transition-colors cursor-pointer">
-                        <h3 className="font-semibold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
+                        <h3 className="font-semibold text-lg mb-2 text-foreground group-hover:text-secondary transition-colors">
                           Ecommerce
                         </h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -62,19 +62,28 @@ const Header = () => {
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
+              
+              <NavigationMenuItem>
+                <Link to="/video-demo" className="inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-foreground hover:text-secondary transition-colors">
+                  Video Demo
+                </Link>
+              </NavigationMenuItem>
+              
+              <NavigationMenuItem>
+                <Link to="/about" className="inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-foreground hover:text-secondary transition-colors">
+                  About Me
+                </Link>
+              </NavigationMenuItem>
+              
+              <NavigationMenuItem>
+                <Link to="/contact" className="inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-foreground hover:text-secondary transition-colors">
+                  Contact
+                </Link>
+              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
           
-          <Link to="/video-demo" className="text-foreground hover:text-primary transition-colors">
-            Video Demo
-          </Link>
-          <Link to="/about" className="text-foreground hover:text-primary transition-colors">
-            About Me
-          </Link>
-          <Link to="/contact" className="text-foreground hover:text-primary transition-colors">
-            Contact
-          </Link>
-          <Button variant="outline" asChild>
+          <Button variant="outline" asChild className="ml-2">
             <a href="https://lovabletowordpress.online/my-account/" target="_blank" rel="noopener noreferrer">
               Login
             </a>
