@@ -7,28 +7,28 @@ import {
 
 const faqs = [
   {
-    question: "Do I need coding knowledge to use this plugin?",
-    answer: "Not at all! Our plugin is designed for everyone. Simply install it, connect your Lovable account, and click convert. The plugin handles all the technical details automatically.",
+    question: "¿Necesito conocimientos de código para usar el plugin?",
+    answer: "¡Para nada! Nuestro plugin está diseñado para todos. Simplemente instálalo, sube tu proyecto ZIP de Lovable y haz clic en convertir. El plugin maneja todos los detalles técnicos automáticamente.",
   },
   {
-    question: "Will my Tailwind CSS styles be preserved?",
-    answer: "Yes! Our smart conversion engine maintains your entire design system, including all Tailwind classes, custom styles, and design tokens. Your WordPress site will look exactly like your Lovable project.",
+    question: "¿Se preservarán mis estilos de Tailwind CSS?",
+    answer: "¡Sí! Nuestro motor de conversión inteligente mantiene todo tu sistema de diseño, incluyendo todas las clases de Tailwind, estilos personalizados y tokens de diseño. Tu sitio WordPress se verá exactamente como tu proyecto Lovable.",
   },
   {
-    question: "What happens after the beta period?",
-    answer: "Beta users get lifetime access to the plugin, including all future updates and features. You'll never pay another dime, and you'll always have access to the latest version.",
+    question: "¿Qué sucede después del período beta?",
+    answer: "Los usuarios beta obtienen acceso de por vida al plugin, incluyendo todas las actualizaciones y funciones futuras. Nunca pagarás otro centavo y siempre tendrás acceso a la última versión.",
   },
   {
-    question: "Can I use this on multiple WordPress sites?",
-    answer: "Absolutely! Your license covers unlimited WordPress installations and unlimited project conversions. Use it on as many sites as you need.",
+    question: "¿Puedo usar esto en múltiples sitios WordPress?",
+    answer: "¡Absolutamente! Tu licencia cubre instalaciones ilimitadas de WordPress y conversiones ilimitadas de proyectos. Úsalo en tantos sitios como necesites.",
   },
   {
-    question: "What WordPress version is required?",
-    answer: "The plugin works with WordPress 5.8 and higher. It's compatible with all major themes and page builders, though it works best with block-based themes.",
+    question: "¿Qué versión de WordPress se requiere?",
+    answer: "El plugin funciona con WordPress 5.8 y superior. Es compatible con todos los temas principales y page builders, aunque funciona mejor con temas basados en bloques.",
   },
   {
-    question: "Is there customer support available?",
-    answer: "Yes! Beta users get priority support via email and our dedicated Discord community. We typically respond within 24 hours and provide comprehensive documentation.",
+    question: "¿Hay soporte al cliente disponible?",
+    answer: "¡Sí! Los usuarios beta obtienen soporte prioritario por correo electrónico y nuestra comunidad dedicada de Discord. Típicamente respondemos dentro de 24 horas y proporcionamos documentación completa.",
   },
 ];
 
@@ -38,10 +38,10 @@ const FAQ = () => {
       <div className="container mx-auto max-w-3xl">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl lg:text-5xl font-bold">
-            Frequently Asked Questions
+            Preguntas frecuentes
           </h2>
           <p className="text-xl text-muted-foreground">
-            Everything you need to know about the plugin.
+            Todo lo que necesitas saber sobre el plugin.
           </p>
         </div>
         

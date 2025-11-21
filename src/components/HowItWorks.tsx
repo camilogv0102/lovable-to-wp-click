@@ -1,57 +1,78 @@
-import { Download, Upload, Rocket } from "lucide-react";
+import { Upload, Cog, Rocket } from "lucide-react";
 
 const steps = [
   {
-    icon: Download,
-    title: "Export from Lovable",
-    description: "Download your project as a ZIP.",
     number: "01",
-  },
-  {
     icon: Upload,
-    title: "Upload to the plugin",
-    description: "Lovable to WordPress compiles the entire structure automatically.",
-    number: "02",
+    title: "Sube tu proyecto",
+    description: "Exporta tu diseño de Lovable como archivo .ZIP y súbelo a la plataforma. Es tan simple como arrastrar y soltar.",
+    image: "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?w=600&q=80",
   },
   {
-    icon: Rocket,
-    title: "Launch on WordPress",
-    description: "Get a fully functional theme ready to publish.",
+    number: "02",
+    icon: Cog,
+    title: "Conversión automática",
+    description: "Nuestra IA analiza tu proyecto y lo convierte automáticamente en un tema de WordPress, preservando todos los estilos y funcionalidades.",
+    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&q=80",
+  },
+  {
     number: "03",
+    icon: Rocket,
+    title: "Descarga y publica",
+    description: "Descarga tu tema de WordPress listo para instalar y publica tu sitio en minutos. Sin configuraciones complejas.",
+    image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=600&q=80",
   },
 ];
 
 const HowItWorks = () => {
   return (
     <section className="py-24 px-4 bg-background">
-      <div className="container mx-auto">
-        <div className="text-center mb-16 space-y-4">
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-20 space-y-4">
           <h2 className="text-4xl lg:text-5xl font-bold">
-            How it works
+            Cómo funciona
           </h2>
+          <p className="text-xl text-muted-foreground">
+            Tres pasos simples para tener tu sitio WordPress listo
+          </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="space-y-24">
           {steps.map((step, index) => (
-            <div key={index} className="relative">
-              {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-16 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-primary to-secondary" />
-              )}
+            <div 
+              key={index} 
+              className={`flex flex-col ${
+                index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
+              } gap-12 items-center`}
+            >
+              {/* Image */}
+              <div className="flex-1 relative group">
+                <div className="absolute inset-0 bg-gradient-primary rounded-3xl blur-2xl opacity-20 group-hover:opacity-30 transition-opacity" />
+                <img 
+                  src={step.image} 
+                  alt={step.title}
+                  className="relative rounded-3xl shadow-card hover:shadow-card-hover transition-all w-full"
+                />
+              </div>
               
-              <div className="relative z-10 text-center space-y-4">
-                <div className="inline-flex relative">
-                  <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center backdrop-blur">
-                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-[var(--shadow-glow)]">
-                      <step.icon className="w-12 h-12 text-primary-foreground" />
-                    </div>
-                  </div>
-                  <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-foreground text-background flex items-center justify-center font-bold text-sm">
+              {/* Content */}
+              <div className="flex-1 space-y-6">
+                <div className="inline-flex items-center gap-4">
+                  <div className="text-7xl lg:text-8xl font-bold bg-gradient-primary bg-clip-text text-transparent">
                     {step.number}
+                  </div>
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center shadow-glow">
+                    <step.icon className="w-8 h-8 text-white" />
                   </div>
                 </div>
                 
-                <h3 className="text-2xl font-semibold">{step.title}</h3>
-                <p className="text-muted-foreground">{step.description}</p>
+                <h3 className="text-3xl lg:text-4xl font-bold">
+                  {step.title}
+                </h3>
+                
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  {step.description}
+                </p>
               </div>
             </div>
           ))}
