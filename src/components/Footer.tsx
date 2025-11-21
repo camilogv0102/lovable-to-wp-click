@@ -25,8 +25,7 @@ const Footer = () => {
     ],
     resources: [
       { name: "Blog", href: "#" },
-      { name: "Documentación", href: "#" },
-      { name: "Tutoriales", href: "#" },
+      { name: "Get Help", href: "/get-help" },
       { name: "Comunidad Discord", href: "#" },
     ],
     legal: [

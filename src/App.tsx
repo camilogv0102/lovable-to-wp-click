@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Contact from "./pages/Contact";
 import VideoDemo from "./pages/VideoDemo";
 import About from "./pages/About";
+import GetHelp from "./pages/GetHelp";
 import PostCheckoutAccount from "./pages/PostCheckoutAccount";
 import NotFound from "./pages/NotFound";
 import LandingPages from "./pages/solutions/LandingPages";
@@ -42,6 +43,7 @@ const App = ({ basePath = "/", componentName, routePath, pageData }: AppProps) =
               <Route path="/contact" element={<Contact />} />
               <Route path="/video-demo" element={<VideoDemo />} />
               <Route path="/about" element={<About />} />
+              <Route path="/get-help" element={<GetHelp />} />
               <Route path="/solutions/landing-pages" element={<LandingPages />} />
               <Route path="/solutions/corporate-websites" element={<CorporateWebsites />} />
               <Route path="/solutions/ecommerce" element={<Ecommerce />} />

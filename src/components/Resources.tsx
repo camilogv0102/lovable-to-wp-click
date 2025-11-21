@@ -9,14 +9,10 @@ const resources = [
     description: "Tips, trucos y las últimas noticias sobre conversión de sitios y WordPress",
   },
   {
-    icon: Code,
-    title: "Documentación",
-    description: "Guías técnicas completas y referencias para desarrolladores",
-  },
-  {
     icon: GraduationCap,
-    title: "Tutoriales",
-    description: "Videotutoriales paso a paso para dominar la herramienta",
+    title: "Get Help",
+    description: "Documentación completa, tutoriales y guías paso a paso",
+    link: "/get-help",
   },
   {
     icon: MessageCircle,
@@ -38,7 +34,7 @@ const Resources = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {resources.map((resource, index) => (
             <Card 
               key={index} 
@@ -50,9 +46,15 @@ const Resources = () => {
                 </div>
                 <h3 className="text-lg font-semibold mb-3">{resource.title}</h3>
                 <p className="text-sm text-muted-foreground mb-4">{resource.description}</p>
-                <Button variant="ghost" size="sm" className="text-primary hover:text-primary/80">
-                  Explorar →
-                </Button>
+                {resource.link ? (
+                  <Button variant="ghost" size="sm" className="text-primary hover:text-primary/80" asChild>
+                    <a href={resource.link}>Explorar →</a>
+                  </Button>
+                ) : (
+                  <Button variant="ghost" size="sm" className="text-primary hover:text-primary/80">
+                    Explorar →
+                  </Button>
+                )}
               </CardContent>
             </Card>
           ))}
