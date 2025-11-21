@@ -65,7 +65,7 @@ const Header = () => {
               
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="text-foreground hover:text-secondary transition-colors">
-                  Para Quién
+                  Who It's For
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="w-[600px] p-6 bg-popover">
@@ -171,7 +171,7 @@ const Header = () => {
                   onClick={() => setOpen(false)}
                   className="flex items-center justify-between w-full text-lg font-semibold text-foreground py-2"
                 >
-                  Para Quién
+                  Who It's For
                   <ChevronDown className="h-4 w-4" />
                 </button>
                 <div className="pl-4 mt-2 space-y-3 border-l-2 border-border">
