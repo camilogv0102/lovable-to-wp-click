@@ -40,6 +40,11 @@
     "description": "Entrepreneurs page focused on launching startups quickly and testing ideas fast"
   },
   {
+    "path": "/get-help",
+    "component": "GetHelp",
+    "description": "Get Help page with documentation, tutorials, popular articles and support resources"
+  },
+  {
     "path": "/setup-account",
     "component": "PostCheckoutAccount",
     "description": "Post-checkout account setup page for WooCommerce. Creates user account and initiates plugin download after purchase. Receives pageData with orderId, userEmail, ajaxUrl, and appRedirect URL."
