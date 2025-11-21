@@ -52,10 +52,10 @@ const FAQ = () => {
               value={`item-${index}`}
               className="border border-border/50 rounded-lg px-6 bg-card/50 backdrop-blur hover:border-primary/30 transition-colors"
             >
-              <AccordionTrigger className="text-left hover:no-underline">
-                <span className="font-semibold">{faq.question}</span>
+              <AccordionTrigger className="text-left hover:no-underline py-5">
+                <span className="font-semibold text-base lg:text-lg">{faq.question}</span>
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
+              <AccordionContent className="text-muted-foreground text-sm lg:text-base pt-2 pb-4">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
