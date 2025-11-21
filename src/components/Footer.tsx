@@ -36,7 +36,7 @@ const Footer = () => {
         {/* Main Footer Content */}
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Column */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="space-y-6">
             <Link to="/" className="inline-flex items-center gap-2 group">
               <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center shadow-glow">
                 <Zap className="w-6 h-6 text-white" />
@@ -98,8 +98,11 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-            
-            <h3 className="font-semibold text-lg mt-8">Legal</h3>
+          </div>
+
+          {/* Legal Links */}
+          <div className="space-y-4">
+            <h3 className="font-semibold text-lg">Legal</h3>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
