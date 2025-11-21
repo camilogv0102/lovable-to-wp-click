@@ -17,17 +17,23 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    --primary: 264 80% 60%;
+    /* Pink to purple gradient inspired by Elementor */
+    --primary: 330 85% 55%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 264 100% 75%;
+    --primary-glow: 330 100% 75%;
 
-    --secondary: 214 95% 55%;
+    /* Vibrant fuchsia accent inspired by Hostinger */
+    --secondary: 320 100% 50%;
     --secondary-foreground: 0 0% 100%;
+
+    /* Deep purple for dark sections */
+    --dark-section: 264 50% 20%;
+    --dark-section-foreground: 0 0% 100%;
 
     --muted: 220 15% 96%;
     --muted-foreground: 220 10% 46%;
 
-    --accent: 264 80% 60%;
+    --accent: 330 85% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -35,18 +41,20 @@ All colors MUST be HSL.
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 264 80% 60%;
+    --ring: 330 85% 55%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(264 80% 60%), hsl(214 95% 55%));
-    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%), hsl(264 100% 98%));
-    --gradient-feature: linear-gradient(135deg, hsl(264 90% 97%), hsl(214 95% 95%));
+    /* Gradients - Elementor inspired pink/purple */
+    --gradient-primary: linear-gradient(135deg, hsl(330 85% 55%), hsl(280 85% 60%));
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%), hsl(330 100% 98%), hsl(280 100% 98%));
+    --gradient-feature: linear-gradient(135deg, hsl(330 90% 97%), hsl(280 90% 97%));
+    --gradient-dark: linear-gradient(135deg, hsl(264 50% 20%), hsl(240 50% 15%));
     
     /* Shadows */
-    --shadow-glow: 0 0 40px hsl(264 80% 60% / 0.2);
+    --shadow-glow: 0 0 40px hsl(330 85% 55% / 0.25);
     --shadow-card: 0 4px 12px hsl(222 47% 11% / 0.08);
+    --shadow-card-hover: 0 8px 24px hsl(222 47% 11% / 0.12);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5% 26%;
@@ -68,17 +76,20 @@ All colors MUST be HSL.
     --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 264 80% 60%;
+    --primary: 330 85% 55%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 264 100% 75%;
+    --primary-glow: 330 100% 75%;
 
-    --secondary: 214 95% 55%;
+    --secondary: 320 100% 50%;
     --secondary-foreground: 0 0% 100%;
+
+    --dark-section: 264 50% 20%;
+    --dark-section-foreground: 0 0% 100%;
 
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 264 80% 60%;
+    --accent: 330 85% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 63% 31%;
@@ -86,14 +97,16 @@ All colors MUST be HSL.
 
     --border: 217 33% 17%;
     --input: 217 33% 17%;
-    --ring: 264 80% 60%;
+    --ring: 330 85% 55%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(264 80% 60%), hsl(214 95% 55%));
-    --gradient-hero: linear-gradient(180deg, hsl(222 47% 11%), hsl(264 40% 15%));
-    --gradient-feature: linear-gradient(135deg, hsl(264 40% 15%), hsl(214 40% 18%));
+    --gradient-primary: linear-gradient(135deg, hsl(330 85% 55%), hsl(280 85% 60%));
+    --gradient-hero: linear-gradient(180deg, hsl(222 47% 11%), hsl(330 40% 20%), hsl(280 40% 20%));
+    --gradient-feature: linear-gradient(135deg, hsl(330 40% 15%), hsl(280 40% 18%));
+    --gradient-dark: linear-gradient(135deg, hsl(264 50% 15%), hsl(240 50% 12%));
     
-    --shadow-glow: 0 0 40px hsl(264 80% 60% / 0.3);
+    --shadow-glow: 0 0 40px hsl(330 85% 55% / 0.3);
     --shadow-card: 0 4px 12px hsl(0 0% 0% / 0.3);
+    --shadow-card-hover: 0 8px 24px hsl(0 0% 0% / 0.4);
 
     --sidebar-background: 240 6% 10%;
     --sidebar-foreground: 240 5% 96%;
@@ -113,5 +126,19 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+  }
+  
+  h1 {
+    @apply text-5xl lg:text-6xl font-bold;
+  }
+  
+  h2 {
+    @apply text-3xl lg:text-4xl font-semibold;
+  }
+  
+  h3 {
+    @apply text-2xl lg:text-3xl font-semibold;
   }
 }
