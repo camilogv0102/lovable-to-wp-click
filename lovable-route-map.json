@@ -10,6 +10,21 @@
     "description": "Contact page with form to send messages, supports dynamic content via pageData prop"
   },
   {
+    "path": "/solutions/landing-pages",
+    "component": "LandingPages",
+    "description": "Landing pages solution showcase with features, use cases, and conversion benefits"
+  },
+  {
+    "path": "/solutions/corporate-websites",
+    "component": "CorporateWebsites",
+    "description": "Corporate websites solution showcase with enterprise features and essential pages"
+  },
+  {
+    "path": "/solutions/ecommerce",
+    "component": "Ecommerce",
+    "description": "Ecommerce solution showcase explaining workflow with static pages and future WooCommerce integration"
+  },
+  {
     "path": "/setup-account",
     "component": "PostCheckoutAccount",
     "description": "Post-checkout account setup page for WooCommerce. Creates user account and initiates plugin download after purchase. Receives pageData with orderId, userEmail, ajaxUrl, and appRedirect URL."

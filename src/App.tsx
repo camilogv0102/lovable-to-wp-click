@@ -10,6 +10,9 @@ import VideoDemo from "./pages/VideoDemo";
 import About from "./pages/About";
 import PostCheckoutAccount from "./pages/PostCheckoutAccount";
 import NotFound from "./pages/NotFound";
+import LandingPages from "./pages/solutions/LandingPages";
+import CorporateWebsites from "./pages/solutions/CorporateWebsites";
+import Ecommerce from "./pages/solutions/Ecommerce";
 import { LovableToWpRoute } from "./ltw-wp-adapter";
 
 const queryClient = new QueryClient();
@@ -36,6 +39,9 @@ const App = ({ basePath = "/", componentName, routePath, pageData }: AppProps) =
               <Route path="/contact" element={<Contact />} />
               <Route path="/video-demo" element={<VideoDemo />} />
               <Route path="/about" element={<About />} />
+              <Route path="/solutions/landing-pages" element={<LandingPages />} />
+              <Route path="/solutions/corporate-websites" element={<CorporateWebsites />} />
+              <Route path="/solutions/ecommerce" element={<Ecommerce />} />
               <Route path="/setup-account" element={<PostCheckoutAccount pageData={pageData} />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route
