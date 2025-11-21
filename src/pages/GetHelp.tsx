@@ -4,76 +4,61 @@ import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { BookOpen, Video, MessageCircle, FileText, Search, ArrowRight, Lightbulb, Code, HelpCircle } from "lucide-react";
+import { MessageCircle, Search, ArrowRight, Lightbulb, Code, HelpCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const GetHelp = () => {
-  const helpCategories = [
+  const categories = [
+    { name: "Inicio rápido", slug: "quick-start" },
+    { name: "Instalación", slug: "installation" },
+    { name: "Conversión", slug: "conversion" },
+    { name: "Personalización", slug: "customization" },
+    { name: "Troubleshooting", slug: "troubleshooting" },
+    { name: "API", slug: "api" },
+  ];
+
+  const helpArticles = [
     {
-      icon: BookOpen,
-      title: "Documentación",
-      description: "Guías completas paso a paso",
-      items: [
-        "Guía de inicio rápido",
-        "Instalación y configuración",
-        "Conversión de proyectos",
-        "Solución de problemas",
-      ],
-    },
-    {
-      icon: Video,
-      title: "Tutoriales en video",
-      description: "Aprende visualmente",
-      items: [
-        "Cómo convertir tu primer proyecto",
-        "Personalización de temas",
-        "Optimización avanzada",
-        "Casos de uso reales",
-      ],
-    },
-    {
-      icon: Code,
-      title: "Referencia de API",
-      description: "Para desarrolladores",
-      items: [
-        "Hooks y filtros",
-        "Funciones personalizadas",
-        "Integración con plugins",
-        "Extensión del plugin",
-      ],
-    },
-    {
+      title: "Guía de inicio rápido: Tu primer proyecto",
+      description: "Aprende a convertir tu primer proyecto Lovable a WordPress en menos de 5 minutos. Esta guía te lleva paso a paso desde la exportación hasta el despliegue.",
+      category: "Inicio rápido",
       icon: Lightbulb,
-      title: "Mejores prácticas",
-      description: "Tips y consejos",
-      items: [
-        "Optimización de rendimiento",
-        "SEO y accesibilidad",
-        "Estructura de archivos",
-        "Mantenimiento de sitios",
-      ],
+      link: "/get-help/quick-start-guide",
+    },
+    {
+      title: "Instalación del plugin Lovable2WP",
+      description: "Instrucciones detalladas para instalar y configurar el plugin en tu WordPress. Incluye requisitos del sistema y configuración inicial.",
+      category: "Instalación",
+      icon: Code,
+      link: "/get-help/plugin-installation",
+    },
+    {
+      title: "Solución de errores comunes",
+      description: "Encuentra soluciones a los problemas más frecuentes durante la conversión. Desde errores de CSS hasta problemas de compatibilidad.",
+      category: "Troubleshooting",
+      icon: HelpCircle,
+      link: "/get-help/troubleshooting",
     },
   ];
 
-  const popularArticles = [
+  const popularBlogArticles = [
     {
-      title: "Cómo exportar un proyecto de Lovable",
-      category: "Inicio",
-      readTime: "3 min",
-    },
-    {
-      title: "Solución de errores comunes de conversión",
-      category: "Troubleshooting",
+      title: "Cómo convertir tu sitio Lovable a WordPress en minutos",
+      category: "Tutorial",
       readTime: "5 min",
+      link: "/blog/como-convertir-lovable-a-wordpress",
     },
     {
-      title: "Personalizar estilos después de la conversión",
-      category: "Personalización",
+      title: "WordPress vs Otros CMS: Por qué WordPress sigue siendo la mejor opción",
+      category: "Comparativa",
       readTime: "7 min",
+      link: "/blog/ventajas-wordpress-vs-otros-cms",
     },
     {
-      title: "Optimización de imágenes y assets",
-      category: "Rendimiento",
-      readTime: "4 min",
+      title: "10 técnicas para optimizar el rendimiento de tu WordPress",
+      category: "Optimización",
+      readTime: "6 min",
+      link: "/blog/optimizar-rendimiento-wordpress",
     },
   ];
 
@@ -111,52 +96,50 @@ const GetHelp = () => {
               </div>
             </div>
             
-            {/* Quick Links */}
+            {/* Quick Links - Now Categories */}
             <div className="flex flex-wrap justify-center gap-3 pt-4">
-              <Button variant="outline" size="sm">Guía de inicio</Button>
-              <Button variant="outline" size="sm">Video tutoriales</Button>
-              <Button variant="outline" size="sm">API Reference</Button>
-              <Button variant="outline" size="sm">FAQs</Button>
+              {categories.map((cat) => (
+                <Button key={cat.slug} variant="outline" size="sm">
+                  {cat.name}
+                </Button>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Help Categories */}
+        {/* Help Articles */}
         <section className="py-24 px-4 bg-background">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-16 space-y-4">
               <h2 className="text-3xl lg:text-4xl font-bold">
-                Explora por categoría
+                Artículos de ayuda
               </h2>
               <p className="text-lg text-muted-foreground">
-                Encuentra exactamente lo que necesitas
+                Documentación y guías para aprovechar al máximo Lovable2WP
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {helpCategories.map((category, index) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {helpArticles.map((article, index) => (
                 <Card 
                   key={index}
                   className="border-border/40 shadow-card hover:shadow-card-hover transition-all hover:-translate-y-1 group cursor-pointer"
                 >
-                  <CardContent className="pt-8">
-                    <div className="w-14 h-14 mb-6 rounded-xl bg-gradient-primary flex items-center justify-center shadow-glow">
-                      <category.icon className="w-7 h-7 text-white" />
+                  <CardContent className="pt-8 pb-6">
+                    <div className="w-12 h-12 mb-4 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <article.icon className="w-6 h-6 text-primary" />
                     </div>
-                    <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                      {category.title}
+                    <div className="mb-3">
+                      <span className="text-xs font-medium px-2 py-1 rounded-full bg-muted text-muted-foreground">
+                        {article.category}
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">
+                      {article.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground mb-6">
-                      {category.description}
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {article.description}
                     </p>
-                    <ul className="space-y-2">
-                      {category.items.map((item, idx) => (
-                        <li key={idx} className="text-sm flex items-start gap-2">
-                          <ArrowRight className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                          <span className="hover:text-primary transition-colors cursor-pointer">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
                   </CardContent>
                 </Card>
               ))}
@@ -164,45 +147,57 @@ const GetHelp = () => {
           </div>
         </section>
 
-        {/* Popular Articles */}
+        {/* Popular Blog Articles */}
         <section className="py-24 px-4 bg-muted/30">
           <div className="container mx-auto max-w-6xl">
             <div className="flex items-center justify-between mb-12">
               <div>
                 <h2 className="text-3xl lg:text-4xl font-bold mb-2">
-                  Artículos populares
+                  Artículos del blog
                 </h2>
                 <p className="text-lg text-muted-foreground">
-                  Lo más leído por nuestra comunidad
+                  Últimas publicaciones y tutoriales
                 </p>
               </div>
-              <Button variant="outline" className="hidden md:flex">
-                Ver todos
-                <ArrowRight className="w-4 h-4" />
+              <Button variant="outline" className="hidden md:flex" asChild>
+                <a href="/blog">
+                  Ver todos
+                  <ArrowRight className="w-4 h-4" />
+                </a>
               </Button>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-6">
-              {popularArticles.map((article, index) => (
-                <Card 
-                  key={index}
-                  className="border-border/40 shadow-card hover:shadow-card-hover transition-all hover:-translate-y-1 cursor-pointer group"
-                >
-                  <CardContent className="pt-6">
-                    <div className="flex items-start justify-between mb-3">
-                      <span className="text-xs font-medium px-3 py-1 rounded-full bg-primary/10 text-primary">
-                        {article.category}
-                      </span>
-                      <span className="text-xs text-muted-foreground">
-                        {article.readTime}
-                      </span>
-                    </div>
-                    <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
-                      {article.title}
-                    </h3>
-                  </CardContent>
-                </Card>
+            <div className="grid md:grid-cols-3 gap-6">
+              {popularBlogArticles.map((article, index) => (
+                <a href={article.link} key={index}>
+                  <Card 
+                    className="border-border/40 shadow-card hover:shadow-card-hover transition-all hover:-translate-y-1 cursor-pointer group h-full"
+                  >
+                    <CardContent className="pt-6">
+                      <div className="flex items-start justify-between mb-3">
+                        <span className="text-xs font-medium px-3 py-1 rounded-full bg-primary/10 text-primary">
+                          {article.category}
+                        </span>
+                        <span className="text-xs text-muted-foreground">
+                          {article.readTime}
+                        </span>
+                      </div>
+                      <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
+                        {article.title}
+                      </h3>
+                    </CardContent>
+                  </Card>
+                </a>
               ))}
+            </div>
+
+            <div className="mt-8 text-center md:hidden">
+              <Button variant="outline" asChild>
+                <a href="/blog">
+                  Ver todos los artículos
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </Button>
             </div>
           </div>
         </section>
@@ -237,9 +232,12 @@ const GetHelp = () => {
                 size="lg" 
                 variant="outline"
                 className="border-white/20 text-white hover:bg-white/10"
+                asChild
               >
-                <HelpCircle className="w-5 h-5" />
-                Contactar soporte
+                <Link to="/contact">
+                  <HelpCircle className="w-5 h-5" />
+                  Contactar soporte
+                </Link>
               </Button>
             </div>
           </div>
