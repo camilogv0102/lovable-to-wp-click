@@ -32,32 +32,32 @@ const Header = () => {
                 <NavigationMenuContent>
                   <div className="w-[600px] p-6 bg-popover">
                     <div className="grid gap-4">
-                      <div className="group rounded-lg p-4 transition-colors cursor-pointer">
+                      <a href="/solutions/landing-pages" className="group rounded-lg p-4 transition-colors cursor-pointer block">
                         <h3 className="font-semibold text-lg mb-2 text-foreground group-hover:text-secondary transition-colors">
                           Landing Pages
                         </h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           Create stunning, high-converting landing pages in minutes. Perfect for campaigns, product launches, and lead generation with beautiful, responsive designs.
                         </p>
-                      </div>
+                      </a>
                       
-                      <div className="group rounded-lg p-4 transition-colors cursor-pointer">
+                      <a href="/solutions/corporate-websites" className="group rounded-lg p-4 transition-colors cursor-pointer block">
                         <h3 className="font-semibold text-lg mb-2 text-foreground group-hover:text-secondary transition-colors">
                           Corporate Websites
                         </h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           Build professional corporate websites with ease. Showcase your brand, services, and team with polished, enterprise-ready designs that inspire trust.
                         </p>
-                      </div>
+                      </a>
                       
-                      <div className="group rounded-lg p-4 transition-colors cursor-pointer">
+                      <a href="/solutions/ecommerce" className="group rounded-lg p-4 transition-colors cursor-pointer block">
                         <h3 className="font-semibold text-lg mb-2 text-foreground group-hover:text-secondary transition-colors">
                           Ecommerce
                         </h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           Speed up your ecommerce workflow by creating static and informational pages instantly. While WooCommerce integration is coming soon, you can build product showcases, about pages, and policies now—then use Elementor for shop pages.
                         </p>
-                      </div>
+                      </a>
                     </div>
                   </div>
                 </NavigationMenuContent>
