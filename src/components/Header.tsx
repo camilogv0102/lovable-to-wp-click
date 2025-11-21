@@ -1,8 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -16,6 +23,48 @@ const Header = () => {
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6">
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-foreground hover:text-primary">
+                  Solutions
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="w-[600px] p-6 bg-popover">
+                    <div className="grid gap-4">
+                      <div className="group rounded-lg p-4 hover:bg-accent/50 transition-colors cursor-pointer">
+                        <h3 className="font-semibold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
+                          Landing Pages
+                        </h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          Create stunning, high-converting landing pages in minutes. Perfect for campaigns, product launches, and lead generation with beautiful, responsive designs.
+                        </p>
+                      </div>
+                      
+                      <div className="group rounded-lg p-4 hover:bg-accent/50 transition-colors cursor-pointer">
+                        <h3 className="font-semibold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
+                          Corporate Websites
+                        </h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          Build professional corporate websites with ease. Showcase your brand, services, and team with polished, enterprise-ready designs that inspire trust.
+                        </p>
+                      </div>
+                      
+                      <div className="group rounded-lg p-4 hover:bg-accent/50 transition-colors cursor-pointer">
+                        <h3 className="font-semibold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
+                          Ecommerce
+                        </h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          Speed up your ecommerce workflow by creating static and informational pages instantly. While WooCommerce integration is coming soon, you can build product showcases, about pages, and policies now—then use Elementor for shop pages.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+          
           <Link to="/video-demo" className="text-foreground hover:text-primary transition-colors">
             Video Demo
           </Link>
@@ -46,6 +95,30 @@ const Header = () => {
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px]">
             <nav className="flex flex-col gap-4 mt-8">
+              <div>
+                <button 
+                  onClick={() => setOpen(false)}
+                  className="flex items-center justify-between w-full text-lg font-semibold text-foreground py-2"
+                >
+                  Solutions
+                  <ChevronDown className="h-4 w-4" />
+                </button>
+                <div className="pl-4 mt-2 space-y-3 border-l-2 border-border">
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Landing Pages</h4>
+                    <p className="text-xs text-muted-foreground">High-converting landing pages in minutes</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Corporate Websites</h4>
+                    <p className="text-xs text-muted-foreground">Professional enterprise-ready designs</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Ecommerce</h4>
+                    <p className="text-xs text-muted-foreground">Static pages now, WooCommerce coming soon</p>
+                  </div>
+                </div>
+              </div>
+              
               <Link 
                 to="/video-demo" 
                 className="text-lg text-foreground hover:text-primary transition-colors py-2"
