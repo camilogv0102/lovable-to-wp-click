@@ -145,7 +145,7 @@ const BlogPost = () => {
         <div className="bg-background py-16 px-4">
           <div className="container mx-auto max-w-5xl">
             {/* Breadcrumb */}
-            <Breadcrumb className="mb-8">
+            <Breadcrumb className="mb-8 flex justify-center">
               <BreadcrumbList>
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
@@ -295,19 +295,6 @@ const BlogPost = () => {
                       </Link>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-
-              {/* Newsletter */}
-              <Card>
-                <CardContent className="p-6 space-y-4">
-                  <h3 className="font-bold text-lg">Newsletter</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Recibe los últimos artículos y novedades en tu email.
-                  </p>
-                  <Button asChild variant="outline" className="w-full">
-                    <Link to="/contact">Suscribirme</Link>
-                  </Button>
                 </CardContent>
               </Card>
             </aside>
