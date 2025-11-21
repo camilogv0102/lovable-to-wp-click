@@ -3,6 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock } from "lucide-react";
 import SEO from "@/components/SEO";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const blogPosts = [
   {
@@ -41,8 +43,8 @@ const Blog = () => {
         title="Blog - Lovable2WP | Noticias y tutoriales sobre WordPress"
         description="Descubre los últimos artículos, tutoriales y consejos sobre WordPress, conversión de sitios y desarrollo web."
       />
-      
-      <div className="min-h-screen">
+      <Header />
+      <div className="min-h-screen pt-20">
         {/* Hero Section */}
         <section className="py-20 px-4 bg-gradient-to-br from-background via-background to-muted/30">
           <div className="container mx-auto max-w-6xl text-center">
@@ -95,6 +97,7 @@ const Blog = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

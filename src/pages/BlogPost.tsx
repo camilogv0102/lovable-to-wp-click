@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowLeft, User } from "lucide-react";
 import SEO from "@/components/SEO";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const blogPostsData: Record<string, {
   title: string;
@@ -112,17 +114,21 @@ const BlogPost = () => {
 
   if (!post) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Artículo no encontrado</h1>
-          <Button asChild>
-            <Link to="/blog">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Volver al blog
-            </Link>
-          </Button>
+      <>
+        <Header />
+        <div className="min-h-screen flex items-center justify-center pt-20">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold mb-4">Artículo no encontrado</h1>
+            <Button asChild>
+              <Link to="/blog">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Volver al blog
+              </Link>
+            </Button>
+          </div>
         </div>
-      </div>
+        <Footer />
+      </>
     );
   }
 
@@ -132,8 +138,8 @@ const BlogPost = () => {
         title={`${post.title} - Lovable2WP Blog`}
         description={post.excerpt}
       />
-      
-      <article className="min-h-screen">
+      <Header />
+      <article className="min-h-screen pt-20">
         {/* Hero Image */}
         <div className="relative h-[50vh] min-h-[400px] overflow-hidden">
           <img
@@ -225,6 +231,7 @@ const BlogPost = () => {
         {/* Spacing */}
         <div className="h-20" />
       </article>
+      <Footer />
     </>
   );
 };
