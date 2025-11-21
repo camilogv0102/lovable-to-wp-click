@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, Clock, ArrowLeft, User } from "lucide-react";
 import SEO from "@/components/SEO";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
@@ -139,22 +140,12 @@ const BlogPost = () => {
         description={post.excerpt}
       />
       <Header />
-      <article className="min-h-screen pt-20">
-        {/* Hero Image */}
-        <div className="relative h-[50vh] min-h-[400px] overflow-hidden">
-          <img
-            src={post.image}
-            alt={post.title}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-        </div>
-
-        {/* Content */}
-        <div className="container mx-auto max-w-4xl px-4 -mt-32 relative z-10">
-          <div className="bg-card rounded-2xl shadow-2xl p-8 md:p-12">
+      <article className="min-h-screen pt-20 bg-background">
+        {/* Hero Section with Title */}
+        <div className="bg-background py-16 px-4">
+          <div className="container mx-auto max-w-5xl">
             {/* Breadcrumb */}
-            <Breadcrumb className="mb-6">
+            <Breadcrumb className="mb-8">
               <BreadcrumbList>
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
@@ -169,67 +160,159 @@ const BlogPost = () => {
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>{post.title}</BreadcrumbPage>
+                  <BreadcrumbPage className="line-clamp-1">{post.title}</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
 
-            {/* Category Badge */}
-            <Badge className="mb-4">{post.category}</Badge>
+            {/* Title - Large and Centered */}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-8 leading-tight">
+              {post.title}
+            </h1>
 
-            {/* Title */}
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">{post.title}</h1>
-
-            {/* Meta Info */}
-            <div className="flex flex-wrap items-center gap-6 text-muted-foreground mb-8 pb-8 border-b">
-              <div className="flex items-center gap-2">
-                <User className="w-4 h-4" />
-                <span className="font-medium">{post.author}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" />
-                <span>{new Date(post.date).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4" />
-                <span>{post.readTime} de lectura</span>
-              </div>
+            {/* Meta Info - Single Line */}
+            <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-muted-foreground mb-6">
+              <Link to="#" className="font-semibold text-foreground hover:text-primary transition-colors">
+                {post.author}
+              </Link>
+              <span>on</span>
+              <Badge variant="secondary" className="font-normal">
+                {post.category}
+              </Badge>
+              <span>•</span>
+              <span>{new Date(post.date).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+              <span>•</span>
+              <span>{post.readTime} de lectura</span>
             </div>
 
-            {/* Content */}
-            <div className="prose prose-lg max-w-none">
-              {post.content.split('\n').map((paragraph, index) => {
-                if (paragraph.startsWith('## ')) {
-                  return <h2 key={index} className="text-3xl font-bold mt-12 mb-6">{paragraph.replace('## ', '')}</h2>;
-                } else if (paragraph.startsWith('### ')) {
-                  return <h3 key={index} className="text-2xl font-bold mt-8 mb-4">{paragraph.replace('### ', '')}</h3>;
-                } else if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
-                  return <p key={index} className="font-bold mt-4">{paragraph.replace(/\*\*/g, '')}</p>;
-                } else if (paragraph.trim().match(/^\d+\./)) {
-                  return <li key={index} className="ml-6 mb-2">{paragraph.replace(/^\d+\.\s*/, '')}</li>;
-                } else if (paragraph.startsWith('- ')) {
-                  return <li key={index} className="ml-6 mb-2">{paragraph.replace('- ', '')}</li>;
-                } else if (paragraph.trim()) {
-                  return <p key={index} className="mb-4 text-foreground/90 leading-relaxed">{paragraph}</p>;
-                }
-                return null;
-              })}
-            </div>
-
-            {/* Back Button */}
-            <div className="mt-12 pt-8 border-t">
-              <Button asChild variant="outline">
-                <Link to="/blog">
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  Volver al blog
-                </Link>
-              </Button>
-            </div>
+            {/* Excerpt */}
+            <p className="text-xl text-center text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              {post.excerpt}
+            </p>
           </div>
         </div>
 
-        {/* Spacing */}
-        <div className="h-20" />
+        {/* Featured Image - Full Width */}
+        <div className="w-full mb-16">
+          <img
+            src={post.image}
+            alt={post.title}
+            className="w-full h-auto max-h-[600px] object-cover"
+          />
+        </div>
+
+        {/* Main Content with Sidebar */}
+        <div className="container mx-auto max-w-7xl px-4 pb-20">
+          <div className="grid lg:grid-cols-[1fr_300px] gap-12">
+            {/* Main Content */}
+            <div className="max-w-3xl">
+              <div className="prose prose-lg max-w-none">
+                {post.content.split('\n').map((paragraph, index) => {
+                  if (paragraph.startsWith('## ')) {
+                    return (
+                      <h2 key={index} className="text-4xl font-bold mt-16 mb-6 scroll-mt-24">
+                        {paragraph.replace('## ', '')}
+                      </h2>
+                    );
+                  } else if (paragraph.startsWith('### ')) {
+                    return (
+                      <h3 key={index} className="text-3xl font-bold mt-12 mb-4 scroll-mt-24">
+                        {paragraph.replace('### ', '')}
+                      </h3>
+                    );
+                  } else if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
+                    return (
+                      <p key={index} className="font-bold text-lg mt-6 mb-3">
+                        {paragraph.replace(/\*\*/g, '')}
+                      </p>
+                    );
+                  } else if (paragraph.trim().match(/^\d+\./)) {
+                    return (
+                      <li key={index} className="ml-6 mb-3 text-lg leading-relaxed">
+                        {paragraph.replace(/^\d+\.\s*/, '')}
+                      </li>
+                    );
+                  } else if (paragraph.startsWith('- ')) {
+                    return (
+                      <li key={index} className="ml-6 mb-3 text-lg leading-relaxed">
+                        {paragraph.replace('- ', '')}
+                      </li>
+                    );
+                  } else if (paragraph.trim()) {
+                    return (
+                      <p key={index} className="mb-6 text-lg text-foreground/90 leading-relaxed">
+                        {paragraph}
+                      </p>
+                    );
+                  }
+                  return null;
+                })}
+              </div>
+
+              {/* Back Button */}
+              <div className="mt-16 pt-8 border-t">
+                <Button asChild variant="outline" size="lg">
+                  <Link to="/blog">
+                    <ArrowLeft className="w-4 h-4 mr-2" />
+                    Volver al blog
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Sidebar */}
+            <aside className="space-y-8">
+              {/* CTA Card */}
+              <Card className="sticky top-24">
+                <CardContent className="p-6 space-y-4">
+                  <h3 className="font-bold text-xl">Convierte tu sitio Lovable</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Transforma tu proyecto Lovable en un sitio WordPress profesional en minutos.
+                  </p>
+                  <Button asChild className="w-full" size="lg">
+                    <Link to="/contact">Empezar ahora</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* Related Articles */}
+              <Card>
+                <CardContent className="p-6 space-y-4">
+                  <h3 className="font-bold text-lg mb-4">Artículos relacionados</h3>
+                  <div className="space-y-4">
+                    <Link to="/blog" className="block group">
+                      <h4 className="font-semibold text-sm group-hover:text-primary transition-colors mb-1">
+                        WordPress vs Otros CMS
+                      </h4>
+                      <p className="text-xs text-muted-foreground">7 min de lectura</p>
+                    </Link>
+                    <div className="border-t pt-4">
+                      <Link to="/blog" className="block group">
+                        <h4 className="font-semibold text-sm group-hover:text-primary transition-colors mb-1">
+                          Optimizar rendimiento WordPress
+                        </h4>
+                        <p className="text-xs text-muted-foreground">6 min de lectura</p>
+                      </Link>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Newsletter */}
+              <Card>
+                <CardContent className="p-6 space-y-4">
+                  <h3 className="font-bold text-lg">Newsletter</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Recibe los últimos artículos y novedades en tu email.
+                  </p>
+                  <Button asChild variant="outline" className="w-full">
+                    <Link to="/contact">Suscribirme</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </aside>
+          </div>
+        </div>
       </article>
       <Footer />
     </>
