@@ -18,6 +18,7 @@ const resources = [
     icon: MessageCircle,
     title: "Comunidad Discord",
     description: "Únete a nuestra comunidad para soporte, inspiración y feedback",
+    link: "https://discord.com/invite/sXMaHca4j",
   },
 ];
 
