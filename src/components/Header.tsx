@@ -74,14 +74,14 @@ const Header = () => {
           <Link to="/contact" className="text-foreground hover:text-primary transition-colors">
             Contact
           </Link>
-          <Button variant="hero" asChild>
-            <a href="/?add-to-cart=444">
-              Get Access
-            </a>
-          </Button>
           <Button variant="outline" asChild>
             <a href="https://lovabletowordpress.online/my-account/" target="_blank" rel="noopener noreferrer">
               Login
+            </a>
+          </Button>
+          <Button variant="hero" asChild>
+            <a href="/?add-to-cart=444">
+              Get Access
             </a>
           </Button>
         </div>
@@ -140,15 +140,7 @@ const Header = () => {
               >
                 Contact
               </Link>
-              <Button variant="hero" asChild className="mt-4">
-                <a 
-                  href="/?add-to-cart=444"
-                  onClick={() => setOpen(false)}
-                >
-                  Get Access
-                </a>
-              </Button>
-              <Button variant="outline" asChild>
+              <Button variant="outline" asChild className="mt-4">
                 <a 
                   href="https://lovabletowordpress.online/my-account/" 
                   target="_blank" 
@@ -156,6 +148,14 @@ const Header = () => {
                   onClick={() => setOpen(false)}
                 >
                   Login
+                </a>
+              </Button>
+              <Button variant="hero" asChild>
+                <a 
+                  href="/?add-to-cart=444"
+                  onClick={() => setOpen(false)}
+                >
+                  Get Access
                 </a>
               </Button>
             </nav>
