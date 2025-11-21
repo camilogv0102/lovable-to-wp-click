@@ -9,6 +9,9 @@ import Contact from "./pages/Contact";
 import VideoDemo from "./pages/VideoDemo";
 import About from "./pages/About";
 import GetHelp from "./pages/GetHelp";
+import TermsOfService from "./pages/TermsOfService";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import CookiePolicy from "./pages/CookiePolicy";
 import PostCheckoutAccount from "./pages/PostCheckoutAccount";
 import NotFound from "./pages/NotFound";
 import LandingPages from "./pages/solutions/LandingPages";
@@ -44,6 +47,9 @@ const App = ({ basePath = "/", componentName, routePath, pageData }: AppProps) =
               <Route path="/video-demo" element={<VideoDemo />} />
               <Route path="/about" element={<About />} />
               <Route path="/get-help" element={<GetHelp />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/cookie-policy" element={<CookiePolicy />} />
               <Route path="/solutions/landing-pages" element={<LandingPages />} />
               <Route path="/solutions/corporate-websites" element={<CorporateWebsites />} />
               <Route path="/solutions/ecommerce" element={<Ecommerce />} />
