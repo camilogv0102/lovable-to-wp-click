@@ -45,6 +45,21 @@
     "description": "Get Help page with documentation, tutorials, popular articles and support resources"
   },
   {
+    "path": "/terms-of-service",
+    "component": "TermsOfService",
+    "description": "Terms of Service page with legal terms and conditions for using the service"
+  },
+  {
+    "path": "/privacy-policy",
+    "component": "PrivacyPolicy",
+    "description": "Privacy Policy page explaining how user data is collected, used and protected"
+  },
+  {
+    "path": "/cookie-policy",
+    "component": "CookiePolicy",
+    "description": "Cookie Policy page explaining the use of cookies on the website"
+  },
+  {
     "path": "/setup-account",
     "component": "PostCheckoutAccount",
     "description": "Post-checkout account setup page for WooCommerce. Creates user account and initiates plugin download after purchase. Receives pageData with orderId, userEmail, ajaxUrl, and appRedirect URL."

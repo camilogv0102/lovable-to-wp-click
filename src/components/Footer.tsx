@@ -21,9 +21,9 @@ const Footer = () => {
       { name: "Comunidad Discord", href: "#" },
     ],
     legal: [
-      { name: "Términos de servicio", href: "#" },
-      { name: "Política de privacidad", href: "#" },
-      { name: "Política de cookies", href: "#" },
+      { name: "Términos de servicio", href: "/terms-of-service" },
+      { name: "Política de privacidad", href: "/privacy-policy" },
+      { name: "Política de cookies", href: "/cookie-policy" },
     ],
   };
 
@@ -106,12 +106,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
-                  <a 
-                    href={link.href}
+                  <Link 
+                    to={link.href}
                     className="text-dark-foreground/70 hover:text-primary transition-colors text-sm"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
