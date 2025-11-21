@@ -32,7 +32,7 @@ const Header = () => {
                 <NavigationMenuContent>
                   <div className="w-[600px] p-6 bg-popover">
                     <div className="grid gap-4">
-                      <div className="group rounded-lg p-4 hover:bg-accent/50 transition-colors cursor-pointer">
+                      <div className="group rounded-lg p-4 transition-colors cursor-pointer">
                         <h3 className="font-semibold text-lg mb-2 text-foreground group-hover:text-secondary transition-colors">
                           Landing Pages
                         </h3>
@@ -41,7 +41,7 @@ const Header = () => {
                         </p>
                       </div>
                       
-                      <div className="group rounded-lg p-4 hover:bg-accent/50 transition-colors cursor-pointer">
+                      <div className="group rounded-lg p-4 transition-colors cursor-pointer">
                         <h3 className="font-semibold text-lg mb-2 text-foreground group-hover:text-secondary transition-colors">
                           Corporate Websites
                         </h3>
@@ -50,7 +50,7 @@ const Header = () => {
                         </p>
                       </div>
                       
-                      <div className="group rounded-lg p-4 hover:bg-accent/50 transition-colors cursor-pointer">
+                      <div className="group rounded-lg p-4 transition-colors cursor-pointer">
                         <h3 className="font-semibold text-lg mb-2 text-foreground group-hover:text-secondary transition-colors">
                           Ecommerce
                         </h3>
