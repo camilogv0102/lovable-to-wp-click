@@ -7,6 +7,7 @@ const resources = [
     icon: BookOpen,
     title: "Blog",
     description: "Tips, trucos y las últimas noticias sobre conversión de sitios y WordPress",
+    link: "/blog",
   },
   {
     icon: GraduationCap,

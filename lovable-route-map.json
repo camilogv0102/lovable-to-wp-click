@@ -60,6 +60,16 @@
     "description": "Cookie Policy page explaining the use of cookies on the website"
   },
   {
+    "path": "/blog",
+    "component": "Blog",
+    "description": "Blog listing page with articles about WordPress and site conversion"
+  },
+  {
+    "path": "/blog/:slug",
+    "component": "BlogPost",
+    "description": "Individual blog post page with full article content"
+  },
+  {
     "path": "/setup-account",
     "component": "PostCheckoutAccount",
     "description": "Post-checkout account setup page for WooCommerce. Creates user account and initiates plugin download after purchase. Receives pageData with orderId, userEmail, ajaxUrl, and appRedirect URL."
