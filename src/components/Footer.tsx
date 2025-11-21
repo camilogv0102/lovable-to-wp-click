@@ -16,7 +16,7 @@ const Footer = () => {
       { name: "E-commerce", href: "/solutions/ecommerce" },
     ],
     resources: [
-      { name: "Blog", href: "#" },
+      { name: "Blog", href: "/blog" },
       { name: "Get Help", href: "/get-help" },
       { name: "Comunidad Discord", href: "https://discord.com/invite/sXMaHca4j" },
     ],
