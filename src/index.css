@@ -17,23 +17,23 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    /* Pink to purple gradient inspired by Elementor */
-    --primary: 330 85% 55%;
+    /* Hostinger inspired purple */
+    --primary: 258 78% 60%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 330 100% 75%;
+    --primary-glow: 258 90% 75%;
 
-    /* Vibrant fuchsia accent inspired by Hostinger */
-    --secondary: 320 100% 50%;
+    /* Secondary vibrant purple */
+    --secondary: 265 85% 65%;
     --secondary-foreground: 0 0% 100%;
 
     /* Deep purple for dark sections */
-    --dark-section: 264 50% 20%;
+    --dark-section: 258 60% 25%;
     --dark-section-foreground: 0 0% 100%;
 
     --muted: 220 15% 96%;
     --muted-foreground: 220 10% 46%;
 
-    --accent: 330 85% 55%;
+    --accent: 258 78% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -41,18 +41,18 @@ All colors MUST be HSL.
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 330 85% 55%;
+    --ring: 258 78% 60%;
 
     --radius: 0.5rem;
 
-    /* Gradients - Elementor inspired pink/purple */
-    --gradient-primary: linear-gradient(135deg, hsl(330 85% 55%), hsl(280 85% 60%));
-    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%), hsl(330 100% 98%), hsl(280 100% 98%));
-    --gradient-feature: linear-gradient(135deg, hsl(330 90% 97%), hsl(280 90% 97%));
-    --gradient-dark: linear-gradient(135deg, hsl(264 50% 20%), hsl(240 50% 15%));
+    /* Gradients - Hostinger inspired purple */
+    --gradient-primary: linear-gradient(135deg, hsl(258 78% 60%), hsl(265 85% 65%));
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%), hsl(258 90% 98%), hsl(265 90% 98%));
+    --gradient-feature: linear-gradient(135deg, hsl(258 90% 97%), hsl(265 90% 97%));
+    --gradient-dark: linear-gradient(135deg, hsl(258 60% 25%), hsl(245 55% 20%));
     
     /* Shadows */
-    --shadow-glow: 0 0 40px hsl(330 85% 55% / 0.25);
+    --shadow-glow: 0 0 40px hsl(258 78% 60% / 0.3);
     --shadow-card: 0 4px 12px hsl(222 47% 11% / 0.08);
     --shadow-card-hover: 0 8px 24px hsl(222 47% 11% / 0.12);
 
@@ -76,20 +76,20 @@ All colors MUST be HSL.
     --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 330 85% 55%;
+    --primary: 258 78% 60%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 330 100% 75%;
+    --primary-glow: 258 90% 75%;
 
-    --secondary: 320 100% 50%;
+    --secondary: 265 85% 65%;
     --secondary-foreground: 0 0% 100%;
 
-    --dark-section: 264 50% 20%;
+    --dark-section: 258 60% 25%;
     --dark-section-foreground: 0 0% 100%;
 
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 330 85% 55%;
+    --accent: 258 78% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 63% 31%;
@@ -97,14 +97,14 @@ All colors MUST be HSL.
 
     --border: 217 33% 17%;
     --input: 217 33% 17%;
-    --ring: 330 85% 55%;
+    --ring: 258 78% 60%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(330 85% 55%), hsl(280 85% 60%));
-    --gradient-hero: linear-gradient(180deg, hsl(222 47% 11%), hsl(330 40% 20%), hsl(280 40% 20%));
-    --gradient-feature: linear-gradient(135deg, hsl(330 40% 15%), hsl(280 40% 18%));
-    --gradient-dark: linear-gradient(135deg, hsl(264 50% 15%), hsl(240 50% 12%));
+    --gradient-primary: linear-gradient(135deg, hsl(258 78% 60%), hsl(265 85% 65%));
+    --gradient-hero: linear-gradient(180deg, hsl(222 47% 11%), hsl(258 50% 25%), hsl(265 50% 25%));
+    --gradient-feature: linear-gradient(135deg, hsl(258 50% 20%), hsl(265 50% 22%));
+    --gradient-dark: linear-gradient(135deg, hsl(258 60% 20%), hsl(245 55% 18%));
     
-    --shadow-glow: 0 0 40px hsl(330 85% 55% / 0.3);
+    --shadow-glow: 0 0 40px hsl(258 78% 60% / 0.35);
     --shadow-card: 0 4px 12px hsl(0 0% 0% / 0.3);
     --shadow-card-hover: 0 8px 24px hsl(0 0% 0% / 0.4);
 
