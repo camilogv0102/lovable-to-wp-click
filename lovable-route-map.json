@@ -25,6 +25,21 @@
     "description": "Ecommerce solution showcase explaining workflow with static pages and future WooCommerce integration"
   },
   {
+    "path": "/for-who/freelancers",
+    "component": "Freelancers",
+    "description": "Freelancers page showing how to deliver client sites faster and scale freelance business"
+  },
+  {
+    "path": "/for-who/agencies",
+    "component": "Agencies",
+    "description": "Agencies page explaining how to scale agency output without scaling costs"
+  },
+  {
+    "path": "/for-who/entrepreneurs",
+    "component": "Entrepreneurs",
+    "description": "Entrepreneurs page focused on launching startups quickly and testing ideas fast"
+  },
+  {
     "path": "/setup-account",
     "component": "PostCheckoutAccount",
     "description": "Post-checkout account setup page for WooCommerce. Creates user account and initiates plugin download after purchase. Receives pageData with orderId, userEmail, ajaxUrl, and appRedirect URL."

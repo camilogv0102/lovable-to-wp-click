@@ -13,6 +13,9 @@ import NotFound from "./pages/NotFound";
 import LandingPages from "./pages/solutions/LandingPages";
 import CorporateWebsites from "./pages/solutions/CorporateWebsites";
 import Ecommerce from "./pages/solutions/Ecommerce";
+import Freelancers from "./pages/for-who/Freelancers";
+import Agencies from "./pages/for-who/Agencies";
+import Entrepreneurs from "./pages/for-who/Entrepreneurs";
 import { LovableToWpRoute } from "./ltw-wp-adapter";
 
 const queryClient = new QueryClient();
@@ -42,6 +45,9 @@ const App = ({ basePath = "/", componentName, routePath, pageData }: AppProps) =
               <Route path="/solutions/landing-pages" element={<LandingPages />} />
               <Route path="/solutions/corporate-websites" element={<CorporateWebsites />} />
               <Route path="/solutions/ecommerce" element={<Ecommerce />} />
+              <Route path="/for-who/freelancers" element={<Freelancers />} />
+              <Route path="/for-who/agencies" element={<Agencies />} />
+              <Route path="/for-who/entrepreneurs" element={<Entrepreneurs />} />
               <Route path="/setup-account" element={<PostCheckoutAccount pageData={pageData} />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route
