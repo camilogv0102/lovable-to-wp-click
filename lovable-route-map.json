@@ -1,0 +1,22 @@
+[
+  {
+    "path": "/",
+    "component": "Index",
+    "description": "Landing page with hero section, features, how it works, pricing, FAQ, and CTA"
+  },
+  {
+    "path": "/contact",
+    "component": "Contact",
+    "description": "Contact page with form to send messages, supports dynamic content via pageData prop"
+  },
+  {
+    "path": "/setup-account",
+    "component": "PostCheckoutAccount",
+    "description": "Post-checkout account setup page for WooCommerce. Creates user account and initiates plugin download after purchase. Receives pageData with orderId, userEmail, ajaxUrl, and appRedirect URL."
+  },
+  {
+    "path": "*",
+    "component": "Dynamic (via ltw-wp-adapter)",
+    "description": "Catch-all route that resolves components dynamically based on WordPress globals"
+  }
+]

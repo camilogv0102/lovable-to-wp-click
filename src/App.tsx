@@ -1,0 +1,60 @@
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from 'react-helmet-async';
+import Index from "./pages/Index";
+import Contact from "./pages/Contact";
+import VideoDemo from "./pages/VideoDemo";
+import About from "./pages/About";
+import PostCheckoutAccount from "./pages/PostCheckoutAccount";
+import NotFound from "./pages/NotFound";
+import { LovableToWpRoute } from "./ltw-wp-adapter";
+
+const queryClient = new QueryClient();
+
+type AppProps = {
+  basePath?: string;
+  componentName?: string;
+  routePath?: string;
+  pageData?: unknown;
+};
+
+const App = ({ basePath = "/", componentName, routePath, pageData }: AppProps) => {
+  const normalizedBase = basePath === "/" ? "" : basePath.replace(/\/+$/, "");
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <HelmetProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter basename={normalizedBase || undefined}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/video-demo" element={<VideoDemo />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/setup-account" element={<PostCheckoutAccount pageData={pageData} />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route
+                path="*"
+                element={
+                  <LovableToWpRoute
+                    fallback={<NotFound />}
+                    componentName={componentName}
+                    routePath={routePath}
+                    pageData={pageData}
+                  />
+                }
+              />
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
+      </HelmetProvider>
+    </QueryClientProvider>
+  );
+};
+
+export default App;
