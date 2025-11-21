@@ -64,6 +64,44 @@ const Header = () => {
               </NavigationMenuItem>
               
               <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-foreground hover:text-secondary transition-colors">
+                  Para Quién
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="w-[600px] p-6 bg-popover">
+                    <div className="grid gap-4">
+                      <a href="/for-who/freelancers" className="group rounded-lg p-4 transition-colors cursor-pointer block">
+                        <h3 className="font-semibold text-lg mb-2 text-foreground group-hover:text-secondary transition-colors">
+                          Freelancers
+                        </h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          Deliver client sites 10x faster, charge more, and scale your freelance business without burning out.
+                        </p>
+                      </a>
+                      
+                      <a href="/for-who/agencies" className="group rounded-lg p-4 transition-colors cursor-pointer block">
+                        <h3 className="font-semibold text-lg mb-2 text-foreground group-hover:text-secondary transition-colors">
+                          Agencies
+                        </h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          Scale your agency without scaling costs. Deliver more projects with your existing team and improve margins.
+                        </p>
+                      </a>
+                      
+                      <a href="/for-who/entrepreneurs" className="group rounded-lg p-4 transition-colors cursor-pointer block">
+                        <h3 className="font-semibold text-lg mb-2 text-foreground group-hover:text-secondary transition-colors">
+                          Entrepreneurs
+                        </h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          Launch your startup this week. Turn your vision into reality in days, not months—no coding required.
+                        </p>
+                      </a>
+                    </div>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              
+              <NavigationMenuItem>
                 <Link to="/video-demo" className="inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-foreground hover:text-secondary transition-colors">
                   Video Demo
                 </Link>
@@ -128,8 +166,32 @@ const Header = () => {
                 </div>
               </div>
               
+              <div>
+                <button 
+                  onClick={() => setOpen(false)}
+                  className="flex items-center justify-between w-full text-lg font-semibold text-foreground py-2"
+                >
+                  Para Quién
+                  <ChevronDown className="h-4 w-4" />
+                </button>
+                <div className="pl-4 mt-2 space-y-3 border-l-2 border-border">
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Freelancers</h4>
+                    <p className="text-xs text-muted-foreground">Deliver client sites 10x faster</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Agencies</h4>
+                    <p className="text-xs text-muted-foreground">Scale without scaling costs</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-1">Entrepreneurs</h4>
+                    <p className="text-xs text-muted-foreground">Launch your startup this week</p>
+                  </div>
+                </div>
+              </div>
+              
               <Link 
-                to="/video-demo" 
+                to="/video-demo"
                 className="text-lg text-foreground hover:text-primary transition-colors py-2"
                 onClick={() => setOpen(false)}
               >
